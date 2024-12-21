@@ -1,20 +1,23 @@
 import React from 'react'
+import ToDoCard from './ToDoCard'
 
-export default function ToDoList() {
-  let todos = [
-    'Go to the gym',
-    'Eat more fruits and vegetables',
-    'Read a book',
-  ]
+export default function ToDoList(props) {
+  const {todos} = props
   return (
-    <ul>
+    <ul className='main'>
       {/* To render the above array values, the todos... we'll map our content */
-      todos.map((todo, todoIndex) => {
-        return (
-          // the parent element must have a unique key, because the index of each element in an array is always unique
-          <li key={todoIndex}>{todo}</li>
-        )
-      })}
+        todos.map((todo, todoIndex) => {
+          return (
+            <ToDoCard key={todoIndex}>
+              {/* 
+                To render out children contents within the Parent component (here ToDoCard is a component), we receive childrens via PROPS (in ToDoCard)
+                
+                ToDoCard is a child component, and the parent ToDoList passes a value <p>{todo}</p> as a children to the ToDoCard component.
+              */}
+              <p>{todo}</p>
+            </ToDoCard>
+          )
+        })}
 
     </ul>
   )
