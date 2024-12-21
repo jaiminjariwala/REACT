@@ -2,13 +2,13 @@ import React from 'react'
 import ToDoCard from './ToDoCard'
 
 export default function ToDoList(props) {
-  const {todos} = props
+  const { todos } = props
   return (
     <ul className='main'>
       {/* To render the above array values, the todos... we'll map our content */
         todos.map((todo, todoIndex) => {
           return (
-            <ToDoCard key={todoIndex}>
+            <ToDoCard key={todoIndex} {...props} index={todoIndex}>
               {/* 
                 To render out children contents within the Parent component (here ToDoCard is a component), we receive childrens via PROPS (in ToDoCard)
                 
