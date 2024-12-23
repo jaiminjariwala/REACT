@@ -1,114 +1,118 @@
 * {
-  font-family: "Inter", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  color: #202124;
-}
-
-h1,
-h2,
-h3,
-input,
-button {
-  font-family: "Press Start 2P", system-ui;
+	font-family: "Rubik", sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: #000000;
 }
 
 #root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  padding: 14px;
-  background: #eff6ff;
-  gap: 14px;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	padding: 24px;
+	background: #EEEEEE;
+	gap: 24px;
+}
+.Title {
+	font-size: 3em;
+	text-align: center;
 }
 
 header {
-  display: flex;
-  align-items: stretch;
+	display: flex;
+	align-items: stretch;
 }
 
 header,
 .main {
-  max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
-  gap: 14px;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+	gap: 14px;
 }
 
 header input {
-  flex: 1;
-  border-radius: 14px;
-  outline: none;
-  width: 100%;
+	flex: 1;
+	border-radius: 5px;
+	outline: none;
+	width: 100%;
+	font-size: 2em;
 }
 
 header button {
-  border-radius: 14px;
-  background: transparent;
-  transition-duration: 200ms;
-  cursor: pointer;
+	border-radius: 5px;
+	background: transparent;
+	transition-duration: 200ms;
+	cursor: pointer;
+	font-size: 2em;
 }
 
 header button:hover {
-  opacity: 0.7;
+	opacity: 0.7;
 }
 
 header button,
 header input {
-  padding: 14px 18px;
-  border: none;
-  outline: none;
-  background: white;
+	padding: 7px 12px;
+	/* border: 1.5px solid black; */
+	border: none;
+	background: rgb(255, 255, 255);
 }
 
 p {
-  font-size: 0.9em;
+	font-size: 2em;
 }
 
 .main {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	gap: 7px;
 }
 
 .todoItem {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 14px;
-  border-radius: 14px;
-  background: white;
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	padding: 2px 7px;
+	border-radius: 5px;
+	outline: none;
+	background: white;
 }
 
 .todoItem p {
-  flex: 1;
+	flex: 1;
 }
 
 .actionsContainer {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+	display: flex;
+	align-items: center;
+	gap: 14px;
 }
 
 .actionsContainer button {
-  transition-duration: 200ms;
-  border: none;
-  background: transparent;
-  cursor: pointer;
+	transition-duration: 200ms;
+	border: none;
+	cursor: pointer;
+	font-size: 20px;
+	background-color: rgb(227, 227, 227);
+	padding: 3px;
+	border-radius: 7px;
 }
 
 .actionsContainer button:hover {
-  opacity: 0.7;
+	opacity: 0.7;
 }
 
-@media (min-width: 640px) {
-  header button,
-  header input {
-    font-size: 1.2em;
-  }
+/* @media (min-width: 640px) {
 
-  p {
-    font-size: 1em;
-  }
-}
+	header button,
+	header input {
+		font-size: 2em;
+	}
+
+	p {
+		font-size: 2em;
+	}
+} */
