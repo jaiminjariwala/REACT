@@ -10,6 +10,8 @@ function App() {
 
   // now we have stateful variable to interact with!
   const [todos, setTodos] = useState([])
+  // to hold the current value declared by the user in the input field...
+  const [todoValue, setTodoValue] = useState('')
 
   function handleAddTodos(newTodo) {
     /* 
@@ -32,19 +34,20 @@ function App() {
   }
 
   function handleEditTodo(index) {
-
+    const valueToBeEdited = todos[index]
+    setTodoValue(valueToBeEdited)
+    handleDeleteTodo(index)
   }
 
   return (
     // what we return from a function is known as JSX!
-    // JSX is writting JS inside HTML!
     // JS goes insides the CURLY BRACES {} in JSX
     
     // We can render our sub-components in <main> tag, as if they are regular HTML Tags, the only difference is that, they are Capitalized!\
     // below is an EMPTY FRAGMENT (Empty Div)
     <>
-      <ToDoInput handleAddTodos={handleAddTodos} /* This attribute will be received by props passed as an argument in ToDoInput functional component */ />
-      <ToDoList handleDeleteTodo={handleDeleteTodo} todos={todos} /* passing attributes to ToDoList Component Tag */ /> 
+      <ToDoInput todoValue={todoValue} setTodoValue={setTodoValue} handleAddTodos={handleAddTodos} /* This attribute will be received by props passed as an argument in ToDoInput functional component */ />
+      <ToDoList handleEditTodo={handleEditTodo} handleDeleteTodo={handleDeleteTodo} todos={todos} /* passing attributes to ToDoList Component Tag */ /> 
 
     </>
   )
