@@ -4,8 +4,9 @@
 // import is an ESM syntax, for that, use "type" : "module" in 'package.json'
 import express from 'express';
 import dotenv from "dotenv";
+import { connectDb } from './config/db.js';
 
-dotenv.config()
+dotenv.config();
 const app = express();  // call the function
 
 
@@ -22,8 +23,12 @@ console.log(process.env.MONGO_URI);
 
 // listen for the port, call the callback function, once the port webpage is ready
 app.listen(5001, () => {
+    connectDb();
     console.log('Server started at http://localhost:5001');
 });
+
+
+
 
 /* 
     INSTEAD OF
