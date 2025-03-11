@@ -1,3 +1,4 @@
+// this is the database connection logic
 import mongoose from 'mongoose';
 
 export const connectDb = async () => {

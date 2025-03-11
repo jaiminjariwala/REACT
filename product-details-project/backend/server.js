@@ -6,8 +6,13 @@ import express from 'express';
 import dotenv from "dotenv";
 import { connectDb } from './config/db.js';
 
+// dotenv.config(): This line tells dotenv to read your .env file (e.g., MONGO_URI=mongodb://localhost:27017/mydb) and make those variables available in process.env. For example, after this runs, process.env.MONGO_URI holds your MongoDB connection string.
 dotenv.config();
-const app = express();  // call the function
+const app = express();  // express() is a function that creates an Express application. The app variable is now an instance of that application, which you’ll use to define routes and start the server.
+
+
+// Routes are how your server responds to client requests. This is where you define the API’s behavior.
+
 
 
 // let's create a "products" route
@@ -16,11 +21,7 @@ app.get("/products", (req, res) => {
 });
 
 
-
-// now we'll call "MONGO_URI Connection string" from the .env file, to connect to our database
-console.log(process.env.MONGO_URI);
-
-
+// The server must listen on a port to accept requests.
 // listen for the port, call the callback function, once the port webpage is ready
 app.listen(5001, () => {
     connectDb();
