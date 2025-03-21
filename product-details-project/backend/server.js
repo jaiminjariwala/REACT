@@ -10,7 +10,7 @@ import productRoutes from "./routes/product.route.js";
 dotenv.config();
 const app = express();
 // express() is a function that creates an Express application. The app variable is now an instance of that application, which you’ll use to define routes and start the server.
-const PORT = process.env.PORT || 5003;
+const PORT = process.env.PORT || 5004;
 
 app.use(express.json()); // this is the middleware, that allows us to parse "req.body", that is... it allows us to accept JSON data in the body.
 
@@ -22,7 +22,7 @@ app.use("/api/products", productRoutes);
 // listen for the port, call the callback function, once the port webpage is ready
 app.listen(PORT, () => {
     connectDb();
-    console.log("Server started at http://localhost:"+ PORT);
+    console.log("Server started at http://localhost:" + PORT);
 });
 
 
