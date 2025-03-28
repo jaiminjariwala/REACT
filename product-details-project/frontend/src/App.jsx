@@ -1,6 +1,6 @@
 // App component is the entry point of our application.
 
-import { Box } from "@chakra-ui/react";
+import { Box, useColorModeValue } from "@chakra-ui/react";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/Homepage";
@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       {/* "Box" here is like "div" */}
-      <Box minH={"100vh"}>
+      <Box minH={"100vh"}  bgColor={useColorModeValue("gray.100", "gray.900")}>
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
